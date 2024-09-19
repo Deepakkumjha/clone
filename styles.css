@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+  }
+  .md-toolbar-tools{
+    margin-left: 0;
+    padding: 0;
+    background-color:white;
+
+}
+.logo{
+    height: 4rem;
+}
+
+.admin{
+    margin-right: 0;
+}
+ 
+
+.menubar{
+    width: 3.8rem;
+    
+} 
+.room_cat{
+    width: 30rem;
+}
+.admin {
+    margin-left: auto; /* Push the image to the rightmost position */
+  } 
+.admin_setting{
+    color: grey;
+    font-size: 0.9rem;
+    margin: 2rem;
+}
+
+.admin_logo{
+    color: grey;
+    font-size: 0.9rem;
+    margin: 1.8rem;
+    margin-left: auto;
+    text-align: right;
+    padding-bottom: 0.2rem;
+}
+.admin{
+    padding-left: 0.5rem;
+}
+md-list-item{
+    
+    height: 6rem;
+}
+
+.room_catog{
+    border: 1rem solid grey;
+
+}
+.search{
+    height: 4rem;
+    width: 100%;
+}

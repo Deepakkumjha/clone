@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Material App</title>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Angular Material -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
+  </head>
+
+  <body ng-app="myApp" layout="column">
+    <div ng-controller="MainController">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <img class="logo" src="images/logo.png" alt="logo" />
+          <div class="admin_setting">
+            <p>ADMIN SETTINGS</p>
+            <p>HOTEL SUNGRACE</p>
+          </div>
+          <div layout="row" class="admin_logo">
+            <div class="admin_logo_content">
+              <p style="padding-top: 1rem">Admin</p>
+              <p>1800 3000 7787 / support@djubo.com</p>
+            </div>
+
+            <img class="logo admin" src="images/admin.png" alt="admin" />
+          </div>
+        </div>
+      </md-toolbar>
+    </div>
+    <div class="container" layout="row" flex>
+      <md-sidenav
+        class="md-whiteframe-4dp menubar"
+        md-component-id="left"
+        md-is-locked-open="true"
+      >
+        <img src="images/settings.png" alt="" />
+        <img src="images/cloud.png" alt="" />
+        <img src="images/star.png" alt="" />
+        <img src="images/mobile.png" alt="" />
+      </md-sidenav>
+      <md-sidenav
+        class="md-whiteframe-4dp room_cat"
+        md-component-id="left"
+        md-is-locked-open="true"
+      >
+        <md-toolbar
+          style="
+            background-color: white;
+            color: black;
+            border: 0.1rem solid rgb(240, 237, 237);
+          "
+          >Room Catogories</md-toolbar
+        >
+        <input
+          type="text"
+          class="search"
+          placeholder="type a category name to search"
+        />
+      </md-sidenav>
+      <md-content class="card" flex>deepak kumar jah</md-content>
+    </div>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
