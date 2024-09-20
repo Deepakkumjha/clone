@@ -1,40 +1,46 @@
 * {
     margin: 0;
     padding: 0;
-    
-  }
-  .md-toolbar-tools{
-    margin-left: 0;
-    padding: 0;
-    background-color:white;
 
 }
-.logo{
+
+.md-toolbar-tools {
+    margin-left: 0;
+    padding: 0;
+    background-color: white;
+
+}
+
+.logo {
     height: 4rem;
 }
 
-.admin{
+.admin {
     margin-right: 0;
 }
- 
 
-.menubar{
+
+.menubar {
     width: 3.8rem;
-    
-} 
-.room_cat{
+    background-color: rgb(30, 40, 45);
+}
+
+.room_cat {
     width: 30rem;
 }
+
 .admin {
-    margin-left: auto; /* Push the image to the rightmost position */
-  } 
-.admin_setting{
+    margin-left: auto;
+    /* Push the image to the rightmost position */
+}
+
+.admin_setting {
     color: grey;
     font-size: 0.9rem;
     margin: 2rem;
 }
 
-.admin_logo{
+.admin_logo {
     color: grey;
     font-size: 0.9rem;
     margin: 1.8rem;
@@ -42,19 +48,62 @@
     text-align: right;
     padding-bottom: 0.2rem;
 }
-.admin{
+
+.admin {
     padding-left: 0.5rem;
 }
-md-list-item{
-    
+
+md-list {
+    padding: 0;
+}
+
+md-list-item {
+    margin: 0;
+    padding: 0;
+
     height: 6rem;
 }
 
-.room_catog{
+.room_catog {
     border: 1rem solid grey;
 
 }
-.search{
+
+.search {
     height: 4rem;
     width: 100%;
+}
+
+button {
+    height: 7rem;
+    width: 7rem;
+}
+
+md-list-item>button {
+    width: 100%;
+    text-align: left !important;
+}
+
+.room_list {
+    border: 0.05rem solid grey;
+    overflow: hidden;
+
+}
+
+.default-border {
+    margin: 2.35rem 2rem 0rem;
+    padding: 0.5rem;
+}
+
+.default-border:hover {
+    background-color: rgb(242, 240, 240);
+}
+
+.active-border {
+    border-bottom: 0.2rem solid green;
+    /* Active green border */
+}
+
+.itemDetails {
+    color: grey
 }

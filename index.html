@@ -1,77 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AngularJS Material App</title>
 
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AngularJS Material App</title>
 
-    <!-- Angular Material -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
-  </head>
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-  <body ng-app="myApp" layout="column">
-    <div ng-controller="MainController">
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <img class="logo" src="images/logo.png" alt="logo" />
-          <div class="admin_setting">
-            <p>ADMIN SETTINGS</p>
-            <p>HOTEL SUNGRACE</p>
-          </div>
-          <div layout="row" class="admin_logo">
-            <div class="admin_logo_content">
-              <p style="padding-top: 1rem">Admin</p>
-              <p>1800 3000 7787 / support@djubo.com</p>
-            </div>
+  <!-- Angular Material -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
+</head>
 
-            <img class="logo admin" src="images/admin.png" alt="admin" />
-          </div>
+<body ng-app="myApp" layout="column" ng-controller="MainController">
+  <div>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <img class="logo" src="images/logo.png" alt="logo" />
+        <div class="admin_setting">
+          <p>ADMIN SETTINGS</p>
+          <p>HOTEL SUNGRACE</p>
         </div>
-      </md-toolbar>
-    </div>
-    <div class="container" layout="row" flex>
-      <md-sidenav
-        class="md-whiteframe-4dp menubar"
-        md-component-id="left"
-        md-is-locked-open="true"
-      >
-        <img src="images/settings.png" alt="" />
-        <img src="images/cloud.png" alt="" />
-        <img src="images/star.png" alt="" />
-        <img src="images/mobile.png" alt="" />
-      </md-sidenav>
-      <md-sidenav
-        class="md-whiteframe-4dp room_cat"
-        md-component-id="left"
-        md-is-locked-open="true"
-      >
-        <md-toolbar
-          style="
+        <div layout="row" class="admin_logo">
+          <div class="admin_logo_content">
+            <p style="padding-top: 1rem">Admin</p>
+            <p>1800 3000 7787 / support@djubo.com</p>
+          </div>
+
+          <img class="logo admin" src="images/admin.png" alt="admin" />
+        </div>
+      </div>
+    </md-toolbar>
+  </div>
+  <div class="container" layout="row" flex>
+    <md-sidenav class="md-whiteframe-4dp menubar" md-component-id="left" md-is-locked-open="true">
+      <img src="images/settings.png" alt="" />
+      <img src="images/cloud.png" alt="" />
+      <img src="images/star.png" alt="" />
+      <img src="images/mobile.png" alt="" />
+    </md-sidenav>
+    <md-sidenav class="md-whiteframe-4dp room_cat" md-component-id="left" md-is-locked-open="true">
+      <md-toolbar style="
+      height:4.5rem;
+            padding:1rem;
             background-color: white;
             color: black;
-            border: 0.1rem solid rgb(240, 237, 237);
-          "
-          >Room Catogories</md-toolbar
-        >
-        <input
-          type="text"
-          class="search"
-          placeholder="type a category name to search"
-        />
-      </md-sidenav>
-      <md-content class="card" flex>deepak kumar jah</md-content>
-    </div>
-    <script src="script.js"></script>
-    <script src="app.js"></script>
-  </body>
+            border: 0.05rem solid rgb(161, 157, 157);
+          ">Room Catogories</md-toolbar>
+      <input type="text" ng-model="searchText" class="search" placeholder="type a category name to search" />
+      <md-list class="room_list" ng-repeat="item in arr | filter:searchText">
+        <md-list-item>
+          <md-button style="text-align: left;">
+            {{item.room}}
+            <p class="itemDetails">{{item.details}}</p>
+          </md-button>
+
+        </md-list-item>
+
+    </md-sidenav>
+    <md-content class="card" flex>
+      <md-toolbar style="background-color: rgb(197, 230, 241); font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
+        layout="row">
+        <span ng-class="{'default-border': true, 'active-border': activeSpan === 1}" ng-click="setActiveSpan(1)">BASIC
+          DETAILS</span>
+        <span ng-class="{'default-border': true, 'active-border': activeSpan === 2}" ng-click="setActiveSpan(2)">ROOM
+          DETAILS</span>
+        <span ng-class="{'default-border': true, 'active-border': activeSpan === 3}"
+          ng-click="setActiveSpan(3)">AMENITIES</span>
+        <span ng-class="{'default-border': true, 'active-border': activeSpan === 4}" ng-click="setActiveSpan(4)">BED
+          TYPES</span>
+        <span ng-class="{'default-border': true, 'active-border': activeSpan === 5}" ng-click="setActiveSpan(5)">GENERAL
+          TERMS</span>
+      </md-toolbar>
+
+      <md-card>
+
+      </md-card>
+    </md-content>
+  </div>
+  <script src="script.js"></script>
+  <script src="app.js"></script>
+</body>
+
 </html>
+
+
+
+<!--  -->
