@@ -10,9 +10,18 @@ app.controller("MainController", function ($scope) {
 
   $scope.activeSpan = null;
 
-  // This function is called when a span is clicked
   $scope.setActiveSpan = function(spanNumber) {
-    // Set activeSpan to the spanNumber (1, 2, or 3) that was clicked
     $scope.activeSpan = spanNumber;
   };
+});
+
+app.config(function($routeProvider) {
+  $routeProvider
+  .when('/home', {
+      templateUrl: 'partials/basicDetails.html',
+  })
+  .when('/room', {
+      templateUrl: 'partials/roomDetails.html',
+  })
+  
 });

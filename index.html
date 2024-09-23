@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AngularJS Material App</title>
 
-  <!-- AngularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-  <!-- Angular Material -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
 </head>
 
 <body ng-app="myApp" layout="column" ng-controller="MainController">
@@ -38,7 +38,7 @@
     </md-toolbar>
   </div>
   <div class="container" layout="row" flex>
-    <md-sidenav class="md-whiteframe-4dp menubar" md-component-id="left" md-is-locked-open="true">
+    <md-sidenav class=" menubar" md-component-id="left" md-is-locked-open="true">
       <img src="images/settings.png" alt="" />
       <img src="images/cloud.png" alt="" />
       <img src="images/star.png" alt="" />
@@ -47,40 +47,44 @@
     <md-sidenav class="md-whiteframe-4dp room_cat" md-component-id="left" md-is-locked-open="true">
       <md-toolbar style="
       height:4.5rem;
-            padding:1rem;
+            padding:1.5rem;
+            font-weight:500;
             background-color: white;
             color: black;
             border: 0.05rem solid rgb(161, 157, 157);
-          ">Room Catogories</md-toolbar>
+          ">Room Categories</md-toolbar>
       <input type="text" ng-model="searchText" class="search" placeholder="type a category name to search" />
+
+
       <md-list class="room_list" ng-repeat="item in arr | filter:searchText">
-        <md-list-item>
-          <md-button style="text-align: left;">
-            {{item.room}}
-            <p class="itemDetails">{{item.details}}</p>
+        <md-list-item class="mdListItem">
+          <md-button class="mdButton">
+            <p class="itemDetailsUpper">{{item.room}}</p>
+            <p class="itemDetailsLower">{{item.details}}</p>
           </md-button>
 
         </md-list-item>
 
     </md-sidenav>
     <md-content class="card" flex>
-      <md-toolbar style="background-color: rgb(197, 230, 241); font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
+      <md-toolbar
+        style="border:0.1rem solid rgb(218, 214, 214); background-color: rgb(238, 241, 242); font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
         layout="row">
-        <span ng-class="{'default-border': true, 'active-border': activeSpan === 1}" ng-click="setActiveSpan(1)">BASIC
-          DETAILS</span>
-        <span ng-class="{'default-border': true, 'active-border': activeSpan === 2}" ng-click="setActiveSpan(2)">ROOM
-          DETAILS</span>
-        <span ng-class="{'default-border': true, 'active-border': activeSpan === 3}"
-          ng-click="setActiveSpan(3)">AMENITIES</span>
+        <a href="#!/home" ng-class="{'default-border': true, 'active-border': activeSpan === 1}"
+          ng-click="setActiveSpan(1)">BASIC
+          DETAILS</a>
+        <a ng-class="{'default-border': true, 'active-border': activeSpan === 2}" ng-click="setActiveSpan(2)">ROOM
+          DETAILS</a>
+        <a href="#!/room" ng-class="{'default-border': true, 'active-border': activeSpan === 3}"
+          ng-click="setActiveSpan(3)">AMENITIES</a>
         <span ng-class="{'default-border': true, 'active-border': activeSpan === 4}" ng-click="setActiveSpan(4)">BED
           TYPES</span>
         <span ng-class="{'default-border': true, 'active-border': activeSpan === 5}" ng-click="setActiveSpan(5)">GENERAL
           TERMS</span>
       </md-toolbar>
 
-      <md-card>
+      <div ng-view></div>
 
-      </md-card>
     </md-content>
   </div>
   <script src="script.js"></script>
@@ -88,7 +92,3 @@
 </body>
 
 </html>
-
-
-
-<!--  -->

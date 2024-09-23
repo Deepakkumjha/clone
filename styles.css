@@ -8,6 +8,7 @@
     margin-left: 0;
     padding: 0;
     background-color: white;
+    border: 0.1rem solid rgb(218, 214, 214);
 
 }
 
@@ -27,6 +28,7 @@
 
 .room_cat {
     width: 30rem;
+    overflow: hidden;
 }
 
 .admin {
@@ -71,7 +73,8 @@ md-list-item {
 
 .search {
     height: 4rem;
-    width: 100%;
+    background-color: rgb(238, 241, 242);
+    border: 0.07rem solid rgb(218, 214, 214);
 }
 
 button {
@@ -85,7 +88,7 @@ md-list-item>button {
 }
 
 .room_list {
-    border: 0.05rem solid grey;
+    border: 0.07rem solid rgb(218, 214, 214);
     overflow: hidden;
 
 }
@@ -93,17 +96,39 @@ md-list-item>button {
 .default-border {
     margin: 2.35rem 2rem 0rem;
     padding: 0.5rem;
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
 }
 
 .default-border:hover {
-    background-color: rgb(242, 240, 240);
+    color: black;
 }
 
 .active-border {
     border-bottom: 0.2rem solid green;
-    /* Active green border */
+    color: black;
 }
 
-.itemDetails {
-    color: grey
+.itemDetailsLower {
+    color: grey;
+    padding-left: 1rem;
+}
+
+.itemDetailsUpper {
+    color: black;
+    padding-left: 1rem;
+}
+
+.mdButton {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* md-list-item {
+    padding: 0rem !important;
+} */
+
+.mdListItem {
+    padding: 0rem !important;
 }
