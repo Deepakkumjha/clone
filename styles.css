@@ -106,8 +106,12 @@ md-list-item>button {
 }
 
 .active-border {
-    border-bottom: 0.2rem solid green;
-    color: black;
+    border-bottom: 0.2rem solid green !important;
+    color: black !important;
+}
+
+.active-border2 {
+    border-right: 0.24rem solid green !important;
 }
 
 .itemDetailsLower {
@@ -131,4 +135,72 @@ md-list-item>button {
 
 .mdListItem {
     padding: 0rem !important;
+}
+
+.room-category-card {
+    margin: 2rem;
+    padding: 1rem 2rem;
+}
+
+.green-switch .md-thumb {
+    background-color: rgb(158, 158, 158) !important;
+    /* Green thumb color when unchecked */
+}
+
+.green-switch .md-bar {
+    background-color: rgba(158, 158, 158, 0.5) !important;
+    /* Light green bar when unchecked */
+}
+
+/* Change color when the switch is checked */
+.green-switch.md-checked .md-thumb {
+    background-color: rgb(76, 175, 80) !important;
+    /* Green thumb color when checked */
+}
+
+.green-switch.md-checked .md-bar {
+    background-color: rgba(76, 175, 80, 0.7) !important;
+    /* Darker green bar when checked */
+}
+
+.property-amenities-card {
+    width: 400px;
+    /* Set the width of the card */
+    background-color: white;
+    /* Card background */
+    margin: 20px;
+    /* Add space around the card */
+}
+
+md-card-title-text .md-headline {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Change checkbox color to green when checked */
+.md-checkbox.custom-checkbox.md-checked .md-container {
+    background-color: green !important;
+    /* Background when checked */
+    border-color: green !important;
+    /* Border color when checked */
+}
+
+/* Default border color for unchecked */
+.md-checkbox.custom-checkbox .md-container {
+    border-color: #ccc !important;
+    /* Default border color */
+}
+
+/* Change the tick color */
+.md-checkbox.custom-checkbox.md-checked .md-check {
+    background-color: green !important;
+    /* Tick color */
+    color: white !important;
+    /* Tick icon color */
+}
+
+.delete {
+    color: green;
+
+    height: 1rem !important;
 }

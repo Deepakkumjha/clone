@@ -9,10 +9,49 @@ app.controller("MainController", function ($scope) {
   $scope.searchText="";
 
   $scope.activeSpan = null;
+  $scope.activeSpan2=null;
 
   $scope.setActiveSpan = function(spanNumber) {
     $scope.activeSpan = spanNumber;
   };
+  $scope.setActiveSpan2=function(spanNumber){
+    console.log(spanNumber);
+    $scope.activeSpan2=spanNumber;
+  }
+  $scope.items = [
+    "Car Rental Desk", 
+    "Pickup/Drop Facility", 
+    "Parking", 
+    "WiFi", 
+    "Laundry", 
+    "Riverside", 
+    "Alarm", 
+    "Extra bed"
+];
+
+$scope.selectedItems = [];
+
+$scope.counter = function(selectedItem) {
+    console.log(selectedItem); 
+    if (selectedItem) {
+        $scope.selectedItems.push(selectedItem);
+        selectedItem = '';  
+    } 
+};
+
+$scope.isBorderGreen = false;
+
+$scope.changeBorder = function() {
+    $scope.isBorderGreen = !$scope.isBorderGreen; 
+};
+
+$scope.removeAmenity = function(amenity) {
+  var index = $scope.selectedItems.indexOf(amenity);
+  if (index > -1) {
+    $scope.selectedItems.splice(index, 1);
+  }
+};
+
 });
 
 app.config(function($routeProvider) {
@@ -25,3 +64,7 @@ app.config(function($routeProvider) {
   })
   
 });
+
+
+
+       

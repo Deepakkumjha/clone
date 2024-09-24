@@ -1,3 +1,18 @@
 <div class="main">
-    <md-card>deepak</md-card>
+    <md-card>
+        <md-card-title>Property Amenities</md-card-title>
+        <md-card-content>
+            <label>Select Amenities</label>
+            <md-select placeholder="Select an item" ng-model="selectedItem">
+                <md-option value="">--Select an item--</md-option>
+                <md-option ng-repeat="item in items" ng-value="item">{{ item }}</md-option>
+            </md-select>
+            <md-button ng-click="counter(selectedItem)">Add</md-button>
+            <div layout="row" ng-value="item" ng-repeat="item in selectedItems">
+                <div flex="50">{{ item }}</div>
+
+                <md-button ng-click="removeAmenity(item)" class="delete" flex="50">delete</md-button>
+            </div>
+        </md-card-content>
+    </md-card>
 </div>
