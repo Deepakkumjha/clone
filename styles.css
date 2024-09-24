@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Roboto, Helvetica Neue, sans-serif !important;
 
 }
 
@@ -33,7 +34,6 @@
 
 .admin {
     margin-left: auto;
-    /* Push the image to the rightmost position */
 }
 
 .admin_setting {
@@ -73,7 +73,7 @@ md-list-item {
 
 .search {
     height: 4rem;
-    background-color: rgb(238, 241, 242);
+    background-color: #f2f6f7;
     border: 0.07rem solid rgb(218, 214, 214);
 }
 
@@ -129,9 +129,7 @@ md-list-item>button {
     margin: 0 !important;
 }
 
-/* md-list-item {
-    padding: 0rem !important;
-} */
+
 
 .mdListItem {
     padding: 0rem !important;
@@ -142,65 +140,129 @@ md-list-item>button {
     padding: 1rem 2rem;
 }
 
+.property {
+    font-weight: 450;
+    padding-bottom: 2.5rem;
+    font-size: 1.25rem;
+}
+
 .green-switch .md-thumb {
     background-color: rgb(158, 158, 158) !important;
-    /* Green thumb color when unchecked */
 }
 
 .green-switch .md-bar {
     background-color: rgba(158, 158, 158, 0.5) !important;
-    /* Light green bar when unchecked */
 }
 
-/* Change color when the switch is checked */
 .green-switch.md-checked .md-thumb {
     background-color: rgb(76, 175, 80) !important;
-    /* Green thumb color when checked */
+}
+
+.ota {
+    color: grey;
 }
 
 .green-switch.md-checked .md-bar {
     background-color: rgba(76, 175, 80, 0.7) !important;
-    /* Darker green bar when checked */
 }
 
 .property-amenities-card {
     width: 400px;
-    /* Set the width of the card */
     background-color: white;
-    /* Card background */
     margin: 20px;
-    /* Add space around the card */
 }
 
-md-card-title-text .md-headline {
-    font-size: 1.5em;
-    font-weight: bold;
+.md-headline {
+    font-size: 1rem;
+    padding-bottom: 1.8rem;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Change checkbox color to green when checked */
 .md-checkbox.custom-checkbox.md-checked .md-container {
     background-color: green !important;
-    /* Background when checked */
     border-color: green !important;
-    /* Border color when checked */
 }
 
-/* Default border color for unchecked */
 .md-checkbox.custom-checkbox .md-container {
     border-color: #ccc !important;
-    /* Default border color */
 }
 
-/* Change the tick color */
 .md-checkbox.custom-checkbox.md-checked .md-check {
     background-color: green !important;
-    /* Tick color */
     color: white !important;
-    /* Tick icon color */
 }
 
 .delete {
     color: green;
 
     height: 1rem !important;
+}
+
+.addButton {
+    height: 1rem;
+    color: green;
+    margin-left: 10rem;
+}
+
+md-select .md-select-icon {
+    display: none !important;
+}
+
+.seletedAmenities {
+    margin: 1rem 0rem 1rem 0rem;
+    padding-bottom: 0.9rem;
+}
+
+input::placeholder {
+    padding-left: 1rem;
+
+}
+
+
+
+
+.md-subhead {
+
+    padding: 1.5rem 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.totalRooms {
+    font-size: 1.3rem;
+}
+
+.amenitiesLabel {
+    color: grey !important;
+}
+
+.inputContainer input::placeholder {
+
+    padding: 0;
+    color: rgb(83, 82, 82);
+    font-size: 1.2rem;
+    /* Change to any color you want */
+    opacity: 1;
+    /* Ensure the opacity is 100% */
+}
+
+md-input-container input::-webkit-input-placeholder {
+    /* Chrome, Safari, Opera */
+    color: red;
+}
+
+md-input-container input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: red;
+}
+
+md-input-container input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
+
+md-input-container input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: red;
 }

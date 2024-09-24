@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
@@ -50,11 +51,12 @@
       height:4.5rem;
             padding:1.5rem;
             font-weight:500;
+            font: size 1.2em;
             background-color: white;
             color: black;
             border: 0.05rem solid rgb(161, 157, 157);
           ">Room Categories</md-toolbar>
-      <input type="text" ng-model="searchText" class="search" placeholder="type a category name to search" />
+      <input type="text" ng-model="searchText" class="search" placeholder="Type a category name to search... " />
 
 
       <md-list class="room_list" ng-repeat="item in arr | filter:searchText">
@@ -68,8 +70,8 @@
 
     </md-sidenav>
     <md-content class="card" flex>
-      <md-toolbar
-        style="border:0.1rem solid rgb(218, 214, 214); background-color: rgb(238, 241, 242); font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
+      <md-toolbar class="room_nav_details"
+        style="border:0.1rem solid rgb(218, 214, 214); background-color: #f2f6f7; font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
         layout="row">
         <a href="#!/home" ng-class="{'default-border': true, 'active-border': activeSpan === 1}"
           ng-click="setActiveSpan(1)">BASIC

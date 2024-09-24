@@ -1,47 +1,47 @@
 <div class="main">
     <md-card class="room-category-card">
         <md-card-title>
-            <span class="md-headline">Define Room Categories</span>
+            <span class="md-headline">DEFINE ROOM CATEGORY</span>
         </md-card-title>
 
         <md-card-content>
             <div>
                 <div layout="row">
-                    <md-input-container flex="50">
-                        <label>Room Category</label>
+                    <md-input-container class="inputContainer" flex="50">
+                        <label class="totalRooms">Room Category</label>
                         <input ng-model="roomCategory" placeholder="Presidential Suite">
                     </md-input-container>
 
-                    <md-input-container flex="50">
-                        <label>Total Rooms</label>
+                    <md-input-container class="inputContainer" flex="50">
+                        <label class="totalRooms">Total Rooms</label>
                         <input type="number" ng-model="totalRooms" placeholder="5">
                     </md-input-container>
                 </div>
                 <div layout="row">
-                    <md-input-container style="margin-left: 0;" flex="25">
-                        <label>Base Occupancy</label>
+                    <md-input-container class="inputContainer" style="margin-left: 0;" flex="25">
+                        <label class="totalRooms">Base Occupancy</label>
                         <input type="number" ng-model="baseOccupancy" placeholder="1">
                     </md-input-container>
 
-                    <md-input-container flex="25">
-                        <label>Ideal Occupancy</label>
+                    <md-input-container class="inputContainer" flex="25">
+                        <label class="totalRooms">Ideal Occupancy</label>
                         <input type="number" ng-model="idealOccupancy" placeholder="2">
                     </md-input-container>
 
-                    <md-input-container flex="25">
-                        <label>Max Occupancy</label>
+                    <md-input-container class="inputContainer" flex="25">
+                        <label class="totalRooms">Max Occupancy</label>
                         <input type="number" ng-model="maxOccupancy" placeholder="4">
                     </md-input-container>
 
-                    <md-input-container style="margin-left: 0;" flex="25">
-                        <label>Total Child</label>
+                    <md-input-container class="inputContainer" style="margin-left: 0;" flex="25">
+                        <label class="totalRooms">Total Child</label>
                         <input type="number" ng-model="totalChild" placeholder="1">
                     </md-input-container>
                 </div>
             </div>
 
             <div layout="column">
-                <p class="md-subhead">Meal Plans</p>
+                <p class="md-subhead">MEAL PLANS</p>
                 <div layout="row ">
                     <md-checkbox class="custom-checkbox" flex="15" ng-model="roomOnly">Room Only</md-checkbox>
                     <md-checkbox class="custom-checkbox" ng-model="breakfast" flex="25">Room with
@@ -53,7 +53,7 @@
             </div>
 
             <div layout="row" layout-align="start center">
-                <span flex="80">Do you want to sync this category on OTA’s?</span>
+                <span class="ota" flex="80">Do you want to sync this category on OTA’s?</span>
                 <md-switch class="green-switch" ng-model="syncOta"></md-switch>
             </div>
         </md-card-content>
