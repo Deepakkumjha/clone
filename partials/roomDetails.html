@@ -1,21 +1,19 @@
-<div class="main">
-    <md-card class="room-category-card">
-        <md-card-title class="property">Property Amenities</md-card-title>
-        <md-card-content>
-            <label class="amenitiesLabel">Select Amenities</label>
-            <div layout="row">
-                <md-select flex="80" placeholder="Select an item" ng-model="selectedItem">
-                    <md-option value="">--Select an item--</md-option>
-                    <md-option ng-repeat="item in items" ng-value="item">{{ item }}</md-option>
-                </md-select>
-                <md-button class="addButton" ng-click="counter(selectedItem)">ADD</md-button>
-            </div>
-            <p class="seletedAmenities">SELECTED AMENITIES</p>
-            <div layout="row" ng-value="item" ng-repeat="item in selectedItems">
-                <div flex="50">{{ item }}</div>
+<md-card class="room-category-card">
+    <md-card-title class="property">Property Amenities</md-card-title>
+    <md-card-content>
+        <label class="amenitiesLabel">Select Amenities</label>
+        <div layout="row">
+            <md-select flex="80" placeholder="Select an item" ng-model="selectedItem">
+                <md-option value="">--Select an item--</md-option>
+                <md-option ng-repeat="item in items" ng-value="item">{{ item }}</md-option>
+            </md-select>
+            <md-button class="addButton" ng-click="counter(selectedItem)">ADD</md-button>
+        </div>
+        <p class="seletedAmenities">SELECTED AMENITIES</p>
+        <div layout="row" ng-value="item" ng-repeat="item in selectedItems">
+            <div flex="50">{{ item }}</div>
 
-                <md-button ng-click="removeAmenity(item)" class="delete" flex="50">delete</md-button>
-            </div>
-        </md-card-content>
-    </md-card>
-</div>
+            <md-button ng-click="removeAmenity(item)" class="delete" flex="50">delete</md-button>
+        </div>
+    </md-card-content>
+</md-card>

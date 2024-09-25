@@ -10,10 +10,12 @@
     padding: 0;
     background-color: white;
     border: 0.1rem solid rgb(218, 214, 214);
+    border-left: 0;
 
 }
 
 .logo {
+    width: 3.8rem;
     height: 4rem;
 }
 
@@ -64,6 +66,10 @@ md-list-item {
     padding: 0;
 
     height: 6rem;
+}
+
+.adminLogo {
+    padding-top: 1rem
 }
 
 .room_catog {
@@ -179,19 +185,6 @@ md-list-item>button {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.md-checkbox.custom-checkbox.md-checked .md-container {
-    background-color: green !important;
-    border-color: green !important;
-}
-
-.md-checkbox.custom-checkbox .md-container {
-    border-color: #ccc !important;
-}
-
-.md-checkbox.custom-checkbox.md-checked .md-check {
-    background-color: green !important;
-    color: white !important;
-}
 
 .delete {
     color: green;
@@ -265,4 +258,47 @@ md-input-container input:-ms-input-placeholder {
 md-input-container input::-ms-input-placeholder {
     /* Microsoft Edge */
     color: red;
+}
+
+/* Change color when checkbox is checked */
+md-checkbox.md-checked .md-icon {
+    background-color: green;
+    /* Change to your desired color */
+}
+
+/* Change color of the checkbox outline (when unchecked) */
+md-checkbox .md-container {
+    border-color: blue;
+    /* Change to your desired outline color */
+}
+
+/* Change color of the ripple effect */
+md-checkbox .md-ripple {
+    background-color: rgba(0, 128, 0, 0.1);
+    /* Change to your desired ripple color */
+}
+
+.ng-scope {
+    margin: 0;
+    /* Remove margin */
+
+
+    /* Remove padding */
+}
+
+.ngView {
+    padding: 2.25rem;
+    background-color: #dbe4e7;
+    height: 100%;
+    border: rgb(218, 214, 214);
+}
+
+.sec_Sidenav {
+    height: 4.55rem;
+    padding: 1.5rem;
+    font-weight: 500;
+    font: size 1.2em;
+    background-color: white !important;
+    color: black !important;
+    border: 0.05rem solid rgb(161, 157, 157);
 }

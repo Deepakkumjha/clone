@@ -30,7 +30,7 @@
         </div>
         <div layout="row" class="admin_logo">
           <div class="admin_logo_content">
-            <p style="padding-top: 1rem">Admin</p>
+            <p class="adminLogo">Admin</p>
             <p>1800 3000 7787 / support@djubo.com</p>
           </div>
 
@@ -47,15 +47,7 @@
       <img src="images/mobile.png" alt="" />
     </md-sidenav>
     <md-sidenav class="md-whiteframe-4dp room_cat" md-component-id="left" md-is-locked-open="true">
-      <md-toolbar style="
-      height:4.5rem;
-            padding:1.5rem;
-            font-weight:500;
-            font: size 1.2em;
-            background-color: white;
-            color: black;
-            border: 0.05rem solid rgb(161, 157, 157);
-          ">Room Categories</md-toolbar>
+      <md-toolbar class="sec_Sidenav">Room Categories</md-toolbar>
       <input type="text" ng-model="searchText" class="search" placeholder="Type a category name to search... " />
 
 
@@ -85,8 +77,10 @@
         <span ng-class="{'default-border': true, 'active-border': activeSpan === 5}" ng-click="setActiveSpan(5)">GENERAL
           TERMS</span>
       </md-toolbar>
+      <div class="ngView">
+        <div ng-view></div>
+      </div>
 
-      <div ng-view></div>
 
     </md-content>
   </div>
