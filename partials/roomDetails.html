@@ -7,13 +7,13 @@
                 <md-option value="">--Select an item--</md-option>
                 <md-option ng-repeat="item in items" ng-value="item">{{ item }}</md-option>
             </md-select>
-            <md-button class="addButton" ng-click="counter(selectedItem)">ADD</md-button>
+            <md-button class="addButton" ng-click="counter(selectedItem,1)">ADD</md-button>
         </div>
         <p class="seletedAmenities">SELECTED AMENITIES</p>
         <div layout="row" ng-value="item" ng-repeat="item in selectedItems">
             <div flex="50">{{ item }}</div>
 
-            <md-button ng-click="removeAmenity(item)" class="delete" flex="50">delete</md-button>
+            <md-button ng-click="removeAmenity(item,1)" class="delete" flex="50">delete</md-button>
         </div>
     </md-card-content>
 </md-card>

@@ -10,7 +10,11 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-material@1.2.2/angular-material.min.css" />
   <link rel="stylesheet" href="styles.css" />
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/angular-aria@1.8.2/angular-aria.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/angular-animate@1.8.2/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
@@ -20,6 +24,7 @@
 </head>
 
 <body ng-app="myApp" layout="column" ng-controller="MainController">
+  <!-- Navbar -->
   <div>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -39,13 +44,21 @@
       </div>
     </md-toolbar>
   </div>
+
+
   <div class="container" layout="row" flex>
+
+    <!-- SideNav Icons -->
+
     <md-sidenav class=" menubar" md-component-id="left" md-is-locked-open="true">
-      <img src="images/settings.png" alt="" />
-      <img src="images/cloud.png" alt="" />
-      <img src="images/star.png" alt="" />
-      <img src="images/mobile.png" alt="" />
+      <img src="images/settings.png" />
+      <img src="images/cloud.png" />
+      <img src="images/star.png" />
+      <img src="images/mobile.png" />
     </md-sidenav>
+
+    <!-- SideNav Room Catogories -->
+
     <md-sidenav class="md-whiteframe-4dp room_cat" md-component-id="left" md-is-locked-open="true">
       <md-toolbar class="sec_Sidenav">Room Categories</md-toolbar>
       <input type="text" ng-model="searchText" class="search" placeholder="Type a category name to search... " />
@@ -53,18 +66,20 @@
 
       <md-list class="room_list" ng-repeat="item in arr | filter:searchText">
         <md-list-item class="mdListItem">
-          <md-button ng-class="{'mdButton': true, 'active-border2': activeSpan2 === $index + 1}"
-            ng-click="setActiveSpan2($index + 1)">
+          <md-button ng-class="{'mdButton': true, 'active-borders': activeSpanRooms === $index + 1}"
+            ng-click="setActiveSpanRooms($index + 1)">
             <p class="itemDetailsUpper">{{item.room}}</p>
             <p class="itemDetailsLower">{{item.details}}</p>
           </md-button>
         </md-list-item>
 
     </md-sidenav>
+
+    <!-- CARDS -->
+
     <md-content class="card" flex>
-      <md-toolbar class="room_nav_details"
-        style="border:0.1rem solid rgb(218, 214, 214); background-color: #f2f6f7; font-size:1rem;color:rgb(81, 78, 78);font-size:0.9rem"
-        layout="row">
+      <md-toolbar class="roomNavDetails scrollableToolbar" layout="row">
+
         <a href="#!/home" ng-class="{'default-border': true, 'active-border': activeSpan === 1}"
           ng-click="setActiveSpan(1)">BASIC
           DETAILS</a>
@@ -72,10 +87,12 @@
           DETAILS</a>
         <a href="#!/room" ng-class="{'default-border': true, 'active-border': activeSpan === 3}"
           ng-click="setActiveSpan(3)">AMENITIES</a>
-        <span ng-class="{'default-border': true, 'active-border': activeSpan === 4}" ng-click="setActiveSpan(4)">BED
-          TYPES</span>
-        <span ng-class="{'default-border': true, 'active-border': activeSpan === 5}" ng-click="setActiveSpan(5)">GENERAL
-          TERMS</span>
+        <a href="#!/bedTypes" ng-class="{'default-border': true, 'active-border': activeSpan === 4}"
+          ng-click="setActiveSpan(4)">BED
+          TYPES</a>
+        <a ng-class="{'default-border': true, 'active-border': activeSpan === 5}" ng-click="setActiveSpan(5)">GENERAL
+          TERMS</a>
+
       </md-toolbar>
       <div class="ngView">
         <div ng-view></div>
